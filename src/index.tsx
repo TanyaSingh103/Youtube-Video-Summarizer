@@ -9,7 +9,10 @@ import App from './App'
 import './index.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
-const nhost = new NhostClient({ subdomain: '<subdomain>', region: '<region>' })
+const nhost = new NhostClient({
+  subdomain: "gitorifvxvedcaxzibsa",
+  region: "ap-south-1",
+});
 
 root.render(
   <React.StrictMode>
