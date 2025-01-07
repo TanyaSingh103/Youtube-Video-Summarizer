@@ -7,6 +7,12 @@ export default function SignInFooter() {
   const navigate = useNavigate()
   const { signInAnonymous } = useSignInAnonymous()
 
+  const anonymousHandler = async () => {
+    const { isSuccess } = await signInAnonymous()
+    if (isSuccess) {
+      navigate('/')
+    }
+  }
 
   return (
     <p className="text-sm text-center">

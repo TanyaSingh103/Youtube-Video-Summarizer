@@ -114,11 +114,6 @@ export default function SignUpEmailPassword() {
           </form>
         </Form>
 
-        <Link to="/sign-up" className={cn(buttonVariants({ variant: 'link' }), 'my-2')}>
-          <ArrowLeft className="w-4 h-4" />
-          Other sign-up options
-        </Link>
-
         <Separator className="my-2" />
 
         <SignUpFooter />
