@@ -34,6 +34,7 @@
     "react-dropzone": "^14.2.3",
     "react-highlight-syntax": "^1.2.1",
     "react-hook-form": "^7.52.2",
+    "react-icons": "^5.4.0",
     "react-router": "6",
     "react-router-dom": "6",
     "react-scripts": "5.0.1",

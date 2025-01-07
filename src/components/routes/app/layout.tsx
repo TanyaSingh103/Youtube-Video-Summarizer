@@ -1,5 +1,4 @@
-import Nhost from '@/assets/nhost.svg'
-import { Button } from '@/components/ui/button'
+import { FaHouse } from "react-icons/fa6";import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { useSignOut } from '@nhost/react'
@@ -27,7 +26,7 @@ export default function Layout() {
                 to="/"
                 className="flex items-center justify-center rounded-full h-9 w-9 bg-primary opacity-80 aria-[current]:opacity-100 hover:opacity-90 text-primary-foreground"
               >
-                <img src={Nhost} className="w-4 h-4" alt="Nhost logo" />
+                <FaHouse />
                 <span className="sr-only">Home</span>
               </NavLink>
             </TooltipTrigger>
@@ -78,7 +77,7 @@ export default function Layout() {
                   onClick={() => setShowMobileNav(false)}
                   className="flex items-center justify-center rounded-full h-9 w-9 bg-primary opacity-80 aria-[current]:opacity-100 hover:opacity-90 text-primary-foreground"
                 >
-                  <img src={Nhost} className="w-4 h-4" alt="Nhost logo" />
+                  <FaHouse />
                   <span className="sr-only">Home</span>
                 </NavLink>
 
@@ -90,6 +89,7 @@ export default function Layout() {
                   <User className="w-5 h-5" />
                   Profile
                 </NavLink>
+
               </nav>
             </SheetContent>
           </Sheet>

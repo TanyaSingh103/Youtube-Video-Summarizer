@@ -14,8 +14,6 @@ export default function Profile() {
       </Card>
       <ChangeEmail />
       <ChangePassword />
-      <UserInfo />
-      <JwtClaims />
     </div>
   )
 }
