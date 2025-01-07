@@ -1,13 +1,11 @@
-// netlify/functions/youtube-summarizer.js
-
 const fetch = require('node-fetch');
 
 exports.handler = async (event, context) => {
   try {
-    // Get the YouTube URL from the request body
+    // Parse the YouTube URL from the incoming request body
     const { youtubeUrl } = JSON.parse(event.body);
 
-    // Call your n8n endpoint to get the summary (replace with your actual n8n webhook URL)
+    // Fetch data from the n8n webhook
     const n8nResponse = await fetch('https://n8n-dev.subspace.money/webhook-test/youtube-summarizer', {
       method: 'POST',
       headers: {
@@ -20,13 +18,17 @@ exports.handler = async (event, context) => {
       throw new Error('Failed to summarize the video');
     }
 
+    // Parse the summary from the n8n response
     const summaryData = await n8nResponse.json();
+    
+    // Return the summary data as JSON response
     return {
       statusCode: 200,
       body: JSON.stringify({ summary: summaryData.summary }),
     };
   } catch (error) {
-    console.error('Error summarizing the video:', error);
+    console.error('Error:', error);
+
     return {
       statusCode: 500,
       body: JSON.stringify({ error: 'Unable to summarize the video' }),

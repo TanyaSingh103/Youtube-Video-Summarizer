@@ -1,7 +1,6 @@
 {
   "name": "nhost-react-apollo-template",
   "version": "0.1.0",
-  "proxy": "https://n8n-dev.subspace.money/webhook-test/youtube-summarizer",
   "dependencies": {
     "@apollo/client": "^3.11.4",
     "@craco/craco": "^7.1.0",
