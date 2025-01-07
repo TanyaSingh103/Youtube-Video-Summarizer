@@ -12,9 +12,11 @@ export default function Home() {
     setSummary('');
   
     try {
-      const response = await fetch('https://n8n-dev.subspace.money/webhook-test/youtube-summarizer', {
+      const response = await fetch('https://your-site.netlify.app/.netlify/functions/proxy', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify({ youtubeUrl: url }),
       });
   
