@@ -12,7 +12,8 @@ export default function Home() {
     setSummary('');
   
     try {
-      const response = await fetch("/api/youtube-summarizer", {
+      // Use the proxy URL (i.e., /api/youtube-summarizer)
+      const response = await fetch('/api/youtube-summarizer', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ youtubeUrl: url }),
@@ -23,15 +24,14 @@ export default function Home() {
       }
   
       const data = await response.json();
-      setSummary(data.summary);
+      setSummary(data.summary || 'No summary available.');
     } catch (error) {
-      console.error(error);
+      console.error('Error:', error);
       setSummary('Error: Unable to summarize the video. Please try again.');
     } finally {
       setIsLoading(false);
     }
-  };  
-  
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
