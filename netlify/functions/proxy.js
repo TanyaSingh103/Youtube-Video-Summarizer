@@ -4,7 +4,7 @@ const fetch = require('node-fetch'); // Make sure node-fetch is installed in you
 exports.handler = async (event, context) => {
   const { youtubeUrl } = JSON.parse(event.body);
 
-  const response = await fetch('https://n8n-dev.subspace.money/webhook-test/youtube-summarizer', {
+  const response = await fetch('https://n8n-dev.subspace.money/webhook/youtube-summarizer', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ youtubeUrl }),
