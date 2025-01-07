@@ -90,15 +90,6 @@ export default function Layout() {
                   <User className="w-5 h-5" />
                   Profile
                 </NavLink>
-
-                <NavLink
-                  to="/storage"
-                  onClick={() => setShowMobileNav(false)}
-                  className="flex items-center gap-4 p-2 rounded-md aria-[current]:bg-accent aria-[current]:text-accent-foreground text-muted-foreground"
-                >
-                  <Archive className="w-5 h-5" />
-                  Storage
-                </NavLink>
               </nav>
             </SheetContent>
           </Sheet>

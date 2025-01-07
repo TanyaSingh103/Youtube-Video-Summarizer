@@ -28,20 +28,9 @@ function App() {
         <Route path="/profile" element={<Profile />} />
       </Route>
 
-      <Route path="/sign-in">
-        <Route path="/sign-in/" element={<SignIn />} />
-        <Route path="/sign-in/email-password" element={<SignInEmailPassword />} />
-        <Route path="/sign-in/security-key" element={<SignInSecurityKey />} />
-        <Route path="/sign-in/magic-link" element={<SignInMagicLink />} />
-        <Route path="/sign-in/forgot-password" element={<ForgotPassword />} />
-      </Route>
+      <Route path="/sign-in/" element={<SignInEmailPassword />} />
 
-      <Route path="/sign-up">
-        <Route path="/sign-up/" element={<SignUp />} />
-        <Route path="/sign-up/email-password" element={<SignUpEmailPassword />} />
-        <Route path="/sign-up/security-key" element={<SignUpSecurityKey />} />
-        <Route path="/sign-up/magic-link" element={<SignUpMagicLink />} />
-      </Route>
+      <Route path="/sign-up/" element={<SignUpEmailPassword />} />
     </Routes>
   )
 }
