@@ -1,6 +1,8 @@
+[build]
+  functions = "netlify/functions"  # Specify the folder for Netlify functions
+
 [[redirects]]
-  from = "/api/*"
-  to = "https://n8n-dev.subspace.money/webhook-test/youtube-summarizer"
+  from = "/api/*"  # Match requests to the /api path
+  to = "/.netlify/functions/proxy"  # Forward them to the Netlify function
   status = 200
   force = true
-

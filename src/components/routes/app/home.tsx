@@ -12,8 +12,7 @@ export default function Home() {
     setSummary('');
   
     try {
-      // Use the proxy URL (i.e., /api/youtube-summarizer)
-      const response = await fetch('/api/youtube-summarizer', {
+      const response = await fetch('/api/proxy', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ youtubeUrl: url }),
@@ -32,7 +31,7 @@ export default function Home() {
       setIsLoading(false);
     }
   };
-
+  
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 py-12">
