@@ -2,7 +2,6 @@ import { AuthGate } from '@/components/auth/auth-gate'
 import Home from '@/components/routes/app/home'
 import Layout from '@/components/routes/app/layout'
 import Profile from '@/components/routes/app/profile'
-import Storage from '@/components/routes/app/storage'
 import ForgotPassword from '@/components/routes/auth/forgot-password'
 import SignIn from '@/components/routes/auth/sign-in/sign-in'
 import SignInEmailPassword from '@/components/routes/auth/sign-in/sign-in-email-password'
@@ -27,7 +26,6 @@ function App() {
       >
         <Route path="/" element={<Home />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/storage" element={<Storage />} />
       </Route>
 
       <Route path="/sign-in">
