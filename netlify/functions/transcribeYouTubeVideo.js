@@ -29,7 +29,7 @@ exports.handler = async (event) => {
 
     const data = await response.json();
 
-    if (data.transcript) {
+    if (data) {
       return {
         statusCode: 200,
         body: JSON.stringify({ transcript: data.errors.response.details.transcriptionAsText }),
