@@ -1,34 +1,29 @@
 import React, { useState } from 'react';
-import { useMutation, gql } from '@apollo/client'; // Import Apollo Client hooks
 import { VideoInput } from './VideoInput';
 import { Summary } from './Summary';
 import { Youtube } from 'lucide-react';
 
-// Define the GraphQL mutation for the Hasura action
-const GENERATE_SUMMARY = gql`
-  mutation GenerateSummary($videoUrl: String!) {
-    generateSummary(videoUrl: $videoUrl)
-  }
-`;
-
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
   const [summary, setSummary] = useState<string>('');
-
-  // Apollo Client mutation hook
-  const [generateSummary] = useMutation(GENERATE_SUMMARY);
 
   const handleSubmit = async (url: string) => {
     setIsLoading(true);
     setSummary('');
   
     try {
-      const { data } = await generateSummary({
-        variables: { videoUrl: url },
+      const response = await fetch('/api/proxy', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ youtubeUrl: url }),
       });
   
-      // Set the summary from the API response
-      setSummary(data.generateSummary || 'No summary available.');
+      if (!response.ok) {
+        throw new Error('Failed to summarize the video');
+      }
+  
+      const data = await response.json();
+      setSummary(data.summary || 'No summary available.');
     } catch (error) {
       console.error('Error:', error);
       setSummary('Error: Unable to summarize the video. Please try again.');
