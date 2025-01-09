@@ -32,7 +32,7 @@ exports.handler = async (event) => {
     if (data) {
       return {
         statusCode: 200,
-        body: JSON.stringify({ transcript: data.errors.response.details.transcriptionAsText }),
+        body: JSON.stringify({ transcript: data.details.transcriptionAsText }),
       };
     } else {
       return {
